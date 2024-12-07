@@ -5,12 +5,20 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Azure Theme Colors */
+  --azure-light: #00bfff;
+  --azure-dark: #0078d4;
+  --glow-intense: rgba(0, 191, 255, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Adjust glow for dark mode */
+    --glow-intense: rgba(0, 191, 255, 0.9);
   }
 }
 
@@ -18,4 +26,45 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Glowing Text */
+.glow {
+  text-shadow: 0 0 10px var(--azure-light), 0 0 20px var(--azure-light),
+    0 0 30px var(--azure-dark);
+}
+
+/* Slight Glow */
+.glow-sm {
+  text-shadow: 0 0 5px var(--azure-light), 0 0 10px var(--azure-dark);
+}
+
+/* Buttons with Glow */
+.glow-button {
+  box-shadow: 0 0 15px var(--azure-light), 0 0 30px var(--azure-dark);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  background-color: var(--azure-dark);
+  box-shadow: 0 0 25px var(--azure-dark), 0 0 40px var(--azure-light);
+}
+
+/* Borders with Glow */
+.glow-border {
+  box-shadow: 0 0 5px var(--azure-light) inset, 0 0 10px var(--azure-dark) inset;
+  transition: all 0.3s ease;
+}
+
+.glow-border:hover {
+  box-shadow: 0 0 10px var(--azure-light), 0 0 20px var(--azure-dark);
+}
+
+/* Glowing Code Highlight */
+.glow-code {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--azure-light);
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-shadow: 0 0 5px var(--azure-dark), 0 0 10px var(--azure-light);
 }
